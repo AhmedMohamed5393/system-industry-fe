@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 150px;">
+  <div class="row d-flex justify-content-center">
+    <app-logout class="mt-2 mb-2 d-flex justify-content-center"></app-logout>
+    <table class="table" *ngIf="shownData">
+      <thead>
+        <tr>
+          <th>Order Id</th>
+          <th>Customer Name</th>
+          <th>Customer Address</th>
+          <th>Order Total Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let info of shownData">
+          <th>{{ info.id }}</th>
+          <td>{{ info.customerName }}</td>
+          <td>{{ info.address }}</td>
+          <td>{{ info.totalAmount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
