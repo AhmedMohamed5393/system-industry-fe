@@ -9,12 +9,12 @@ const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/js
 @Injectable({ providedIn: 'root' })
 export class Service {
   private server = `${environment.apiUrl}/api`;
-  private orderModuleName = 'order';
-  private customerModuleName = 'customer';
+  private orderModuleName = 'orders';
+  private customerModuleName = 'customers';
   private readonly route = '/';
   constructor(private http: HttpClient) {}
   public getAllOrders(): Observable<IOrder[]> {
-    const url = `${this.server}${this.route}${this.orderModuleName}s`;
+    const url = `${this.server}${this.route}${this.orderModuleName}`;
     return this.http.get<IOrder[]>(url, httpOptions);
   }
   public signin(customer: ILoginCustomerRequest): Observable<any> {
@@ -22,7 +22,7 @@ export class Service {
     return this.http.post<any>(url, customer, httpOptions);
   }
   public getAllCustomers(): Observable<ICustomer[]> {
-    const url = `${this.server}${this.route}${this.customerModuleName}s`;
+    const url = `${this.server}${this.route}${this.customerModuleName}`;
     return this.http.get<ICustomer[]>(url, httpOptions);
   }
 }

@@ -1,6 +1,7 @@
 <div class="container" style="margin-top: 150px;">
   <div class="row d-flex justify-content-center">
     <app-logout class="mt-2 mb-2 d-flex justify-content-center"></app-logout>
+    <blockquote class="blockquote d-flex justify-content-center" style="margin-top: 150px;" *ngIf="!shownData">{{notFoundMessage}}</blockquote>
     <table class="table" *ngIf="shownData">
       <thead>
         <tr>
