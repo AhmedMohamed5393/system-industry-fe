@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, mergeMap, retry, tap} from 'rxjs/operators';
-import * as actions from './app.action';
-import { Service } from './app.service';
+import * as actions from '../actions/app.action';
+import { Service } from '../services/app.service';
 import { ILoginCustomerRequest } from '../models/interfaces/requests/ILoginCustomerRequest';
 @Injectable()
 export class Effects {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { storeProvider } from '../../ngrx/app.provider';
+import { storeProvider } from '../../providers/app.provider';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 @Component({ selector: 'app-login', templateUrl: './login.component.html', styleUrls: ['./login.component.css'] })
