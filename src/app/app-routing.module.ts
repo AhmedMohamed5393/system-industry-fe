@@ -7,7 +7,7 @@ import { OrdersListComponent } from './pages/orders-list/orders-list.component';
 const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', canActivate: [AuthGuard], component: LogoutComponent },
-  { path: '',/* canActivate: [AuthGuard],*/ component: OrdersListComponent },
+  { path: '', canActivate: [AuthGuard], component: OrdersListComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

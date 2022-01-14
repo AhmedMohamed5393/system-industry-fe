@@ -1,6 +1,6 @@
 import { IOrderItem } from "../IOrderItem";
 export interface IOrder {
-    customerId: string;
+    id: string;
     items: IOrderItem[];
     totalAmount: number;
     totalPrice: number;
