@@ -8,7 +8,7 @@ import { IOrder } from '../models/interfaces/responses/IOrder';
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 @Injectable({ providedIn: 'root' })
 export class Service {
-  private server = !environment.production ? `${environment.apiUrl}/api` : 'http://ecardshop.herokuapp.com/api';
+  private server = !environment.production ? `${environment.apiUrl}/api` : 'https://ecardshop.herokuapp.com/api';
   private orderModuleName = 'orders';
   private customerModuleName = 'customers';
   private readonly route = '/';
