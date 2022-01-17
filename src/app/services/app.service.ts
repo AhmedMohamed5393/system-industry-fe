@@ -1,15 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { devEnvironment } from '../../environments/environment';
-import { prodEnvironment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 import { ILoginCustomerRequest } from '../models/interfaces/requests/ILoginCustomerRequest';
 import { ICustomer } from '../models/interfaces/responses/ICustomer';
 import { IOrder } from '../models/interfaces/responses/IOrder';
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 @Injectable({ providedIn: 'root' })
 export class Service {
-  private server = !prodEnvironment ? `${devEnvironment.apiUrl}/api` : `${prodEnvironment.apiUrl}/api`;
+  private server = !environment.production ? `${environment.apiUrl}/api` : 'http://ecardshop.herokuapp.com/api';
   private orderModuleName = 'orders';
   private customerModuleName = 'customers';
   private readonly route = '/';
