@@ -1,14 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { devEnvironment } from '../../environments/environment';
+import { prodEnvironment } from '../../environments/environment.prod';
 import { ILoginCustomerRequest } from '../models/interfaces/requests/ILoginCustomerRequest';
 import { ICustomer } from '../models/interfaces/responses/ICustomer';
 import { IOrder } from '../models/interfaces/responses/IOrder';
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 @Injectable({ providedIn: 'root' })
 export class Service {
-  private server = `${environment.apiUrl}/api`;
+  private server = !prodEnvironment ? `${devEnvironment.apiUrl}/api` : `${prodEnvironment.apiUrl}/api`;
   private orderModuleName = 'orders';
   private customerModuleName = 'customers';
   private readonly route = '/';
