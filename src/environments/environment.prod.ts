@@ -1,1 +1,1 @@
-export const environment = { production: true, apiUrl: 'http://ecardshop.herokuapp.com' };
+export const environment = { production: true, apiUrl: 'https://ecardshop.herokuapp.com' };
